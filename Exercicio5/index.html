@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 - CORS GET</title>
+</head>
+<body>
+    <h1>Exercício 5 - Método GET</h1>
+
+    <pre id="resultado">Carregando usuários...</pre>
+
+    <script>
+        fetch('http://localhost:3000/usuarios')
+            .then(resposta => resposta.json())
+            .then(dados => {
+                document.getElementById('resultado').textContent =
+                    JSON.stringify(dados, null, 2);
+            })
+            .catch(erro => {
+                document.getElementById('resultado').textContent =
+                    'Erro na requisição: ' + erro.message;
+            });
+    </script>
+</body>
+</html>

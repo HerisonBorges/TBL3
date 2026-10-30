@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Origem permitida</title>
+</head>
+<body>
+    <h1>Teste de origem permitida</h1>
+
+    <button onclick="buscarUsuarios()">Buscar usuários</button>
+
+    <script>
+        function buscarUsuarios() {
+            fetch('http://localhost:3000/usuarios')
+                .then(resposta => resposta.json())
+                .then(console.log)
+                .catch(console.error);
+        }
+    </script>
+</body>
+</html>
